@@ -485,7 +485,7 @@
 				731AA15D1BF67E9A00F6D946 /* lib */,
 			);
 			name = Release;
-			path = LLVM/Release;
+			path = libclang/LLVM/Release;
 			sourceTree = SOURCE_ROOT;
 		};
 		731AA1541BF67E9A00F6D946 /* include */ = {
@@ -836,12 +836,10 @@
 		73E31D421BF6363A00AFEBFC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				HEADER_SEARCH_PATHS = "${PROJECT_DIR}/LLVM/Release/include";
-				LIBRARY_SEARCH_PATHS = (
-					"${PROJECT_DIR}/LLVM/Release/lib",
-					"$(PROJECT_DIR)/LLVM/Release/lib",
-				);
+				HEADER_SEARCH_PATHS = "${PROJECT_DIR}/libclang/LLVM/Release/include";
+				LIBRARY_SEARCH_PATHS = "${PROJECT_DIR}/libclang/LLVM/Release/lib";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "${SRCROOT}/libclang";
 				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_DIR}/ClangTest/bridging-header.h";
 			};
 			name = Debug;
@@ -849,12 +847,10 @@
 		73E31D431BF6363A00AFEBFC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				HEADER_SEARCH_PATHS = "${PROJECT_DIR}/LLVM/Release/include";
-				LIBRARY_SEARCH_PATHS = (
-					"${PROJECT_DIR}/LLVM/Release/lib",
-					"$(PROJECT_DIR)/LLVM/Release/lib",
-				);
+				HEADER_SEARCH_PATHS = "${PROJECT_DIR}/libclang/LLVM/Release/include";
+				LIBRARY_SEARCH_PATHS = "${PROJECT_DIR}/libclang/LLVM/Release/lib";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "${SRCROOT}/libclang";
 				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_DIR}/ClangTest/bridging-header.h";
 			};
 			name = Release;

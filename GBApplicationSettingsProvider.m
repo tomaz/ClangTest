@@ -39,7 +39,11 @@ typedef NS_ENUM(NSUInteger, GBHTMLAnchorFormat) {
 @property (copy) NSString *projectName;
 
 /** Human readable name of the project company. */
-@property (copy) NSString *projectCompany;
+@property (copy) NSString *projectCompany __ATTRIBUTE__ __ANOTHER_ATTR("yuck not this");
+
+@property (assing) CGFloat value; ///< description for value
+
+#pragma mark - Delimiter text
 
 /** Can't do it without comment!
 */
