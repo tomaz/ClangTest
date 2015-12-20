@@ -75,9 +75,12 @@ crt_co:
 # LLVM build
 llvm_build:
 	@echo "    *** Building LLVM toolchain"
-	@$(CD) $(DIR_BUILD) && ../$(DIR_LLVM)configure --enable-optimized
-	@$(CD) $(DIR_BUILD) && $(MAKE)
+	@$(CD) $(DIR_BUILD) && cmake ../$(DIR_LLVM) -DLIBCLANG_BUILD_STATIC=ON 
+	@$(CD) $(DIR_BUILD) && cmake --build .
 
 # Copy build files
 copy:
-	cp $(DIR_BUILD)Release+Asserts/lib/*.a $(DIR_RELEASE)lib/
+	mkdir -p $(DIR_RELEASE)lib
+	libtool -static -o $(DIR_RELEASE)lib/libclang-osx-`uname -m`.a $(DIR_BUILD)lib/*.a
+	mkdir -p $(DIR_RELEASE)include/clang-c
+	cp -rf $(DIR_CLANG)include/clang-c/*.h $(DIR_RELEASE)include/clang-c/
