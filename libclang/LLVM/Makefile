@@ -80,7 +80,7 @@ llvm_build:
 
 # Copy build files
 copy:
-	cp $(DIR_BUILD)lib/*.a $(DIR_RELEASE)lib/
-# combine all required .a files to one libfile 
-combine:
-	libtool -static -o $(DIR_RELEASE)lib/libclang-osx-`uname -m`.a $(DIR_RELEASE)lib/* 
+	mkdir -p $(DIR_RELEASE)lib
+	libtool -static -o $(DIR_RELEASE)lib/libclang-osx-`uname -m`.a $(DIR_BUILD)lib/*.a
+	mkdir -p $(DIR_RELEASE)include/clang-c
+	cp -rf $(DIR_CLANG)include/clang-c/*.h $(DIR_RELEASE)include/clang-c/
